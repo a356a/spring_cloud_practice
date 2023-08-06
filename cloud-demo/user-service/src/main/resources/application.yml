@@ -6,12 +6,6 @@ spring:
     username: root
     password: Mysql12345^
     driver-class-name: com.mysql.jdbc.Driver
-  shardingsphere:
-    sharding:
-      default-database-strategy:
-      tables:
-#      discovery:
-#        cluster-name: HZ
 mybatis:
   type-aliases-package: cn.itcast.user.pojo
   configuration:
@@ -21,9 +15,3 @@ logging:
     cn.itcast: debug
   pattern:
     dateformat: MM-dd HH:mm:ss:SSS
-#eureka:
-#  client:
-#    service-url:  # eureka的地址信息
-#      defaultZone: http://127.0.0.1:10086/eureka
-pattern:
-  name: 本地环境local
