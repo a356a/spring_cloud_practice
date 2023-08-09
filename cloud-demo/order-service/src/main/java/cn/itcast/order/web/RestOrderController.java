@@ -18,10 +18,10 @@ public class RestOrderController {
 
     @GetMapping("{orderID}")
     public Order queryOrderAndUser(@PathVariable("orderID") Long orderID){
-        String orderURL = "http://localhost:8088/order/"+orderID.toString();
+        String orderURL = "http://orderservice/order/"+orderID.toString();
         Order forObject = restTemplate.getForObject(orderURL, Order.class);
 
-        String userURL = "http://localhost:8081/user/"+forObject.getUserId().toString();
+        String userURL = "http://userservice/user/"+forObject.getUserId().toString();
         User forObject1 = restTemplate.getForObject(userURL, User.class);
 
 

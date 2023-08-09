@@ -6,6 +6,14 @@ spring:
     username: root
     password: Mysql12345^
     driver-class-name: com.mysql.jdbc.Driver
+  application:
+    name: userservice
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka/
+
 mybatis:
   type-aliases-package: cn.itcast.user.pojo
   configuration:
