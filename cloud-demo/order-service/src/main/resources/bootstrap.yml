@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: orderservice
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        cluster-name: HZ
+      config:
+        file-extension: yaml
+

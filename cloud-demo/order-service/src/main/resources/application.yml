@@ -6,13 +6,13 @@ spring:
     username: root
     password: Mysql12345^
     driver-class-name: com.mysql.jdbc.Driver
-  application:
-    name: orderservice
-  cloud:
-    nacos:
-      discovery:
-        server-addr: localhost:8848
-        cluster-name: HZ
+#  application:
+#    name: orderservice
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: localhost:8848
+#        cluster-name: HZ
 
 userservice:
   ribbon:

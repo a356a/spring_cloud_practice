@@ -3,11 +3,15 @@ package cn.itcast.order.web;
 import cn.itcast.order.pojo.Order;
 import cn.itcast.order.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @RestController
 @RequestMapping("restOrder")
@@ -15,6 +19,9 @@ public class RestOrderController {
 
     @Autowired
     RestTemplate restTemplate;
+
+    @Value("${develop.timefo}")
+    String time;
 
     @GetMapping("{orderID}")
     public Order queryOrderAndUser(@PathVariable("orderID") Long orderID){
@@ -26,6 +33,7 @@ public class RestOrderController {
 
 
         forObject.setUser(forObject1);
+        forObject.setName(forObject.getName()+ LocalDateTime.now().format(DateTimeFormatter.ofPattern(time)));
         return forObject;
     }
 
