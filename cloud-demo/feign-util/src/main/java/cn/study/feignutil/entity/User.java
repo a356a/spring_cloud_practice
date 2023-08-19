@@ -1,4 +1,4 @@
-package cn.itcast.order.pojo;
+package cn.study.feignutil.entity;
 
 import lombok.Data;
 

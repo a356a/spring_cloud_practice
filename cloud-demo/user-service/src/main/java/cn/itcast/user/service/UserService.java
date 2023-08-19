@@ -1,7 +1,7 @@
 package cn.itcast.user.service;
 
 import cn.itcast.user.mapper.UserMapper;
-import cn.itcast.user.pojo.User;
+import cn.study.feignutil.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
