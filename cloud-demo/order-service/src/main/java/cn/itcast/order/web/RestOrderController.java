@@ -1,5 +1,6 @@
 package cn.itcast.order.web;
 
+import cn.itcast.order.config.GlobalConfig;
 import cn.itcast.order.pojo.Order;
 import cn.itcast.order.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,8 @@ public class RestOrderController {
     @Autowired
     RestTemplate restTemplate;
 
-    @Value("${develop.timefo}")
-    String time;
+    @Autowired
+    GlobalConfig globalConfig;
 
     @GetMapping("{orderID}")
     public Order queryOrderAndUser(@PathVariable("orderID") Long orderID){
@@ -33,7 +34,7 @@ public class RestOrderController {
 
 
         forObject.setUser(forObject1);
-        forObject.setName(forObject.getName()+ LocalDateTime.now().format(DateTimeFormatter.ofPattern(time)));
+        forObject.setName(forObject.getName()+ LocalDateTime.now().format(DateTimeFormatter.ofPattern(globalConfig.getTimefo())));
         return forObject;
     }
 
