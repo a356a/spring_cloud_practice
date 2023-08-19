@@ -33,3 +33,8 @@ logging:
     cn.itcast: debug
 develop:
   timefo: yyyy+MM-dd HH:mm:ss
+feign:
+  client:
+    config:
+      userservice:
+        logger-level: BASIC
