@@ -6,6 +6,18 @@ spring:
       discovery:
         server-addr: localhost:8848
         cluster-name: HZ
+    gateway:
+      routes:
+        - id: userservice
+          uri: lb://userservice
+          predicates:
+            - Path=/user/**
+        - id: orderservice
+          uri: lb://orderservice
+          predicates:
+#            - Path=/order/**
+            - Path=/feignOrder/**
+#            - Path=/restOrder/**
   application:
     name: mygateway
 
