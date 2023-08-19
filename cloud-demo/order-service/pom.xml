@@ -37,14 +37,11 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <groupId>cn.itcast.demo</groupId>
+            <artifactId>feign-util</artifactId>
+            <version>1.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>io.github.openfeign</groupId>
-            <artifactId>feign-httpclient</artifactId>
-        </dependency>
 
 <!--        <dependency>-->
 <!--            <groupId>org.springframework.cloud</groupId>-->
