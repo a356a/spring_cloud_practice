@@ -1,0 +1,21 @@
+server:
+  port: 10088
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        cluster-name: HZ
+  application:
+    name: mygateway
+
+
+
+
+
+
+
+
+
+
+
