@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -26,7 +27,7 @@ public class FeignOrderController {
     UserClient userClient;
 
     @GetMapping("{userID}")
-    public User queryOrderAndUser(@PathVariable("userID") Long userID,HttpServletRequest servletRequest){
+    public User queryOrderAndUser(@PathVariable("userID") Long userID, HttpServletRequest servletRequest, HttpServletResponse response){
         User byId = userClient.findById(userID);
         String realPath = servletRequest.getServletContext().getRealPath("");
         byId.setUsername(byId.getUsername()+  LocalDateTime.now().format(DateTimeFormatter.ofPattern(globalConfig.getTimefo()))  );
